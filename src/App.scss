@@ -1,0 +1,103 @@
+$button-size: 80px;
+$button-margin: 0.5px;
+$result-font-size: 40px;
+
+.App {
+  text-align: center;
+}
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.App-content {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.calc-box{
+  background-color: black;
+  width: $button-size * 4 + 4px;
+  height: $button-size * 7 + $button-margin * 7;
+
+  .header{
+    position: relative;
+    float: left;
+    height: $button-size / 4;
+    min-width: 100%;
+    font-size: 14px;
+    text-align: left;
+    padding: 5px;
+    padding-left: 10px;
+  }
+
+  .result{
+    position: relative;
+    float: right;
+    margin: 15px;
+    margin-top: 40px;
+    font-size: $result-font-size;
+  }
+
+  .button{
+    position: relative;
+    float: left;
+    background-color: rgb(180, 178, 178);
+    color: white;
+    width: $button-size;
+    height: $button-size;
+    margin: $button-margin;
+    font-size: 30px;
+
+    &:active{
+      background-color: rgb(119, 117, 117);
+    }
+
+    &.full-width{
+      width: 100%;
+    }
+    
+    &.wide{
+      width: $button-size * 2 + $button-margin * 2;
+    }
+
+    &.double-height{
+      height: $button-size * 2;
+    }
+
+    &.dark-grey{
+      background-color: rgb(160, 156, 156);
+
+      &:active{
+        background-color: rgb(102, 99, 99);
+      }
+    }
+
+    &.orange{
+      background-color: orange;
+      font-size: 40px;
+
+      &:active{
+        background-color: rgb(146, 105, 28);
+      }
+    }
+
+    &.black{
+      background-color: black;
+    }
+
+    .label{
+      @include centerer;
+    }
+
+  }
+
+}
